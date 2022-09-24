@@ -33,7 +33,7 @@ def cadastrar():
 def listar():
   conn = mysql.connect()
   cursor = conn.cursor()
-  cursor.execute('select (nome_produto, preco_produto, categoria_produto from tbl_produtos')
+  cursor.execute('select nome_produto, preco_produto, categoria_produto from tbl_produtos')
   data = cursor.fetchall()
   conn.commit()
   return render_template('listagem_produto.html', dados=data)
